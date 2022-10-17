@@ -1,0 +1,77 @@
+/*=============================================================================================
+ PROGRAM: A Simple C program to check whether the given array is a subset of another array.
+ Created by: Shannen T. Nazareno
+ Date: 10/18/2022
+===============================================================================================*/
+
+#include <stdio.h>
+#include <stdlib.h>
+
+void printArray(int arr[], int size)
+{
+	int i;
+	for(i=0; i<size; i++)
+	{
+		printf ("%4d", arr[i]);
+	}
+	
+	printf ("\n");
+	
+}
+
+int main()
+{
+	int n1, n2, i, j, c = 0;
+	
+	printf ("Number of elements for array 1: ");
+	scanf ("%d", &n1);
+	printf ("Number of elements for array 2 [subset]: ");
+	scanf ("%d", &n2);
+	
+	if (n2>n1)
+	{
+		printf ("\n\aArray 2 cannot be a subset of array 1.");
+		exit(1);
+	}
+	
+	int arr1[n1], arr2[n2];
+	
+	printf ("\nEnter %d elements for array 1:\n", n1);
+	for(i=0; i<n1 ; i++)
+	{
+		printf ("element - %d: ", i);
+		scanf ("%d", &arr1[i]);
+	}
+	
+	printf ("\nEnter %d elements for array 2:\n", n2);
+	for(i=0; i<n2; i++)
+	{
+		printf ("element - %d: ", i);
+		scanf ("%d", &arr2[i]);
+	}
+	
+	printf ("\nArray 1: ");
+	printArray(arr1, n1);
+	printf ("Array 2: ");
+	printArray(arr2, n2);
+	
+	
+	for(i=0; i<n1; i++)
+	{
+		if(arr1[i]==arr2[i])
+		{
+			c++;
+		}
+	}
+	
+	if (c==n2)
+	{
+		printf ("\nArray 2 is a subset of array 1.");
+	}
+	else
+	{
+		printf ("\nArray 2 is not a subset of array 1.");
+	}
+	
+	return 0;
+}
