@@ -64,10 +64,10 @@ void printArray(int arr[], int n)
 
 void zeroes(int arr[], int n, int count0, int count1)
 {
-	int i, j, k, zero[count0], nonZero[count1];
+	int i, j, k, zero[count0], nonZero[count1], count;
 	
-	i = j =k =0;
-	for(int count=0; count<n; count++)
+	i = j = 0;
+	for(count=0; count<n; count++)
 	{
 		if(arr[count]==0)
 		{
@@ -81,7 +81,6 @@ void zeroes(int arr[], int n, int count0, int count1)
 		}
 	}
 	
-	int count;
 	i = j = count = k =0;
 	
 	for(i; i<count1; i++)
